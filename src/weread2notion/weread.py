@@ -34,7 +34,7 @@ class WeReadClient:
                     message = (
                         data["upgrade_info"].get("message") or data["upgrade_info"]
                     )
-                    raise WeReadError(f"微信读书技能需要升级：{message}")
+                    print(f"微信读书技能需要升级: {message}")
                 if data.get("errcode", 0) != 0:
                     raise WeReadError(
                         f"{api_name} 返回 errcode={data.get('errcode')}: {data.get('errmsg', '')}"
